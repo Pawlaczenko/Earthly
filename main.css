@@ -17,6 +17,26 @@
     --vertical-gap: 3rem;
 }
 
+.gap {
+    padding: var(--vertical-gap) var(--horizontal-gap);
+}
+
+/* ?Headings */
+
+.heading--1 {
+    font-family: var(--font-header);
+    color: var(--color-white);
+    font-size: 10rem;
+    font-weight: 700;
+}
+
+.heading--2 {
+    font-family: var(--font-header);
+    color: var(--color-black);
+    font-size: 5rem;
+    font-weight: 300;
+}
+
 *,
 *::before,
 *::after {
@@ -47,7 +67,6 @@ body {
 
 .navigation {
     width: 100%;
-    padding: var(--vertical-gap) var(--horizontal-gap);
     right: 0;
     display: flex;
     justify-content: space-between;
@@ -105,7 +124,6 @@ body {
 /* Header */
 
 .header {
-    padding: var(--vertical-gap) var(--horizontal-gap);
     height: 100vh;
     background: url(./assets/dots.svg) no-repeat top 10px right 8%,
                 url(./assets/back-1-top.png) no-repeat top right,
@@ -120,11 +138,6 @@ body {
 }
 
 .header__h {
-    font-family: var(--font-header);
-    color: var(--color-white);
-    font-size: 10rem;
-    font-weight: 700;
-
     margin-top: 4rem;
 }
 
@@ -135,21 +148,25 @@ body {
 }
 
 .cta {
-    display: block;
+    display: inline-block;
+
     font-family: var(--font-header);
     font-weight: 900;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
+
     background-color: var(--color-primary);
     color: var(--color-white);
     border-radius: 3.5rem;
-    padding: 2rem 8rem;
+    border: 5px solid rgba(255,255,255,0);
+
+    padding: 2rem 0;
     margin-top: 4rem;
     position: relative;
     overflow: hidden;
-
-    border: 5px solid rgba(255,255,255,0);
+    width: 32.5rem;
 }
 
 .cta::before {
@@ -169,4 +186,35 @@ body {
 .cta:hover::before {
     width: 200%;
     height: 400%;
+}
+
+/* Science Section */
+
+.science {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+
+.science__content {
+    padding-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.science__h {
+    margin-bottom: 1rem;
+}
+
+.science__paragraph {
+    font-size: 1.6rem;
+    width: 80%;
+    opacity: .5;
+}
+
+.science__image {
+    background: url(./assets/back-2.jpg) center;
+    background-size: cover;
+    min-height: 53rem;
 }

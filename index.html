@@ -12,21 +12,35 @@
 </head>
 
 <body>
-    <nav class="navigation navigation--fixed">
+    <nav class="navigation navigation--fixed gap">
         <a href="#header" class="logo">Earthly</a>
         <ul class="navigation__list">
-            <li class="navigation__item"><a class="navigation__link" href="#">Science</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Tips</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Branches</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Contact</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#science">Science</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#tips">Tips</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#branches">Branches</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <header id="header" class="header">
-        <h1 class="header__h">Save the Earth.</h1>
+    <header id="header" class="header gap">
+        <h1 class="heading--1 header__h">Save the Earth.</h1>
         <p class="header__paragraph">The science is in: We don’t have to accept a fate of gloom and doom for the Earth.
             This is a hopeful wake-up call, but only if we act with great urgency.</p>
         <a href="#tips" class="cta">Act now >>></a>
     </header>
+    <section class="science" id="science">
+        <div class="science__content gap">
+            <h2 class="heading--2 science__h">
+                Science points us to a better path for building our future.
+            </h2>
+            <p class="science__paragraph">
+                In recent, published research from The Nature Conservancy and 12 peer organizations, science points us
+                to a better path for building a more sustainable, more hopeful future for the Earth.
+            </p>
+            <a href="https://www.nature.org/en-us/what-we-do/our-insights/perspectives/the-science-of-sustainability/"
+                class="cta" target="_blank">Read the article</a>
+        </div>
+        <div class="science__image gap"></div>
+    </section>
     <script src="main.js"></script>
 </body>
 
