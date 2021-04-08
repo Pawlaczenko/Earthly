@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142.005" height="175.777" viewBox="0 0 142.005 175.777">
+  <g id="Group_8" data-name="Group 8" transform="translate(-341 -5060.223)">
+    <g id="earth" transform="translate(0 -12)">
+      <path id="Intersection_1" data-name="Intersection 1" d="M-1724.315,462q-.68-7.408-.685-15a162.027,162.027,0,0,1,142-160.778V444a18,18,0,0,1-18,18Z" transform="translate(2066 4786)" fill="#6369d1"/>
+      <path id="Path_19" data-name="Path 19" d="M351.528,5190.984s-11.4,34.424,8.143,31.085,53.818-34.445,62.983-49.007-2.628-22.812-26.323-9.241S376.945,5142.087,351.528,5190.984Z" transform="translate(21 6)" fill="#48a53a"/>
+      <path id="Path_18" data-name="Path 18" d="M402.811,5199.521a435.756,435.756,0,0,1,45.532-19.961c27.045-10.182,19.772-18.01,22.147-23.922s13.589-5.387,13.589-5.387v49.27H402.811Z" transform="translate(-1.075 48.479)" fill="#48a53a"/>
+    </g>
+    <g id="moon" transform="translate(0 -12)">
+      <circle id="moon-2" data-name="moon" cx="42" cy="42" r="42" transform="translate(343 5076)" fill="#b9b9b9"/>
+      <circle id="moon-3" data-name="moon" cx="6.5" cy="6.5" r="6.5" transform="translate(357 5096)" fill="#acacac"/>
+      <circle id="moon-4" data-name="moon" cx="9.5" cy="9.5" r="9.5" transform="translate(361 5112)" fill="#bebebe"/>
+    </g>
+  </g>
+</svg>
