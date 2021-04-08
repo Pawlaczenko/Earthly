@@ -267,7 +267,8 @@ body {
 
 .tips__item:nth-child(even) .tips__icon,
 .tips__item:nth-child(even) .tips__icon::before,
-.tips__item:nth-child(even):hover::before{    
+.tips__item:nth-child(even):hover::before,   
+.tips__item:nth-child(even):hover::after{    
     background-color: var(--color-primary);
 }
 
@@ -277,7 +278,8 @@ body {
 
 .tips__item:nth-child(odd) .tips__icon,
 .tips__item:nth-child(odd) .tips__icon::before,
-.tips__item:nth-child(odd):hover::before{    
+.tips__item:nth-child(odd):hover::before, 
+.tips__item:nth-child(odd):hover::after{    
     background-color: var(--color-secondary);
 }
 
@@ -301,18 +303,26 @@ body {
     overflow: hidden;
 }
 
-.tips__item::before {
+.tips__item::before,
+.tips__item::after {
     content: "";
     position: absolute;
     display: block;
-    left: -5rem;
-    top: -5rem;
     background-color: transparent;
     width: 10rem;
     height: 10rem;
-    transform: rotate(45deg);
-
     transition: all .2s ease-in-out;
+    transform: rotate(45deg);
+}
+
+.tips__item::before {
+    left: -5rem;
+    top: -5rem;
+}
+
+.tips__item::after {
+    right: -5rem;
+    bottom: -5rem;
 }
 
 .tips__icon {
