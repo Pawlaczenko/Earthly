@@ -1,4 +1,7 @@
 const navElement = document.querySelector('.navigation');
+const messageElement = document.querySelector('.contact__textarea');
+const wordsCounter = document.querySelector('.contact__counter-words');
+
 const detachedNavClass = "navigation--detached";
 
 const stickNavigation = (e) => {
@@ -10,4 +13,22 @@ const stickNavigation = (e) => {
     }
 }
 
+const countWords = (e) => {
+    let words = e.target.value.length;
+    wordsCounter.innerHTML = words;
+
+    let color = 'black';
+
+    if (words > 190 && words <= 200) {
+        color = "orange";
+    } else if (words > 200) {
+        color = "red";
+    } else {
+        color = "black";
+    }
+
+    wordsCounter.parentElement.style.color = color;
+}
+
 window.addEventListener('scroll', stickNavigation);
+messageElement.addEventListener('input', countWords);
