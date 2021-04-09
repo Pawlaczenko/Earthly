@@ -1,6 +1,7 @@
 const navElement = document.querySelector('.navigation');
 const messageElement = document.querySelector('.contact__textarea');
 const wordsCounter = document.querySelector('.contact__counter-words');
+const formButton = document.querySelector('.contact__button');
 
 const detachedNavClass = "navigation--detached";
 
@@ -11,6 +12,10 @@ const stickNavigation = (e) => {
     } else if (yPos === 0) {
         navElement.classList.remove(detachedNavClass);
     }
+}
+
+const disableButton = (words) => {
+    formButton.disabled = (words > 200);
 }
 
 const countWords = (e) => {
@@ -26,7 +31,7 @@ const countWords = (e) => {
     } else {
         color = "black";
     }
-
+    disableButton(words);
     wordsCounter.parentElement.style.color = color;
 }
 

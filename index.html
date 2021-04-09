@@ -195,15 +195,15 @@
                 <fieldset class="contact__user">
                     <div class="contact__group">
                         <label for="fName" class="contact__label">First Name</label>
-                        <input type="text" name="fName" id="fName" class="contact__input">
+                        <input type="text" name="fName" id="fName" class="contact__input" required>
                     </div>
                     <div class="contact__group">
                         <label for="lName" class="contact__label">Last Name</label>
-                        <input type="text" name="lName" id="lName" class="contact__input">
+                        <input type="text" name="lName" id="lName" class="contact__input" required>
                     </div>
                     <div class="contact__group">
                         <label for="mail" class="contact__label">Mail</label>
-                        <input type="email" name="mail" id="mail" class="contact__input">
+                        <input type="email" name="mail" id="mail" class="contact__input" required>
                     </div>
                     <div class="contact__group">
                         <label for="phone" class="contact__label">Phone</label>
@@ -225,13 +225,13 @@
                         <span class="contact__checkmark"></span>
                     </label>
                     <label class="contact__radio-container">Different matter
-                        <input class="contact__custom-radio" value="other" type="radio" name="msg_matter">
+                        <input class="contact__custom-radio" value="other" type="radio" name="msg_matter" checked>
                         <span class="contact__checkmark"></span>
                     </label>
                 </fieldset>
                 <fieldset class="contact__message">
                     <label class="contact__label" for="message">Message</label>
-                    <textarea class="contact__textarea" name="message" id="message"
+                    <textarea required class="contact__textarea" name="message" id="message"
                         placeholder="Write your message..."></textarea>
                     <div class="contact__counter"><span class="contact__counter-words">0</span>/200</div>
                 </fieldset>

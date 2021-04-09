@@ -672,6 +672,10 @@ body {
     margin-right: 4rem;
 }
 
+.contact__radio-container:hover {
+    color: var(--color-primary);
+}
+
 .contact__custom-radio {
     position: absolute;
     opacity: 0;
@@ -777,6 +781,15 @@ body {
     background-color: var(--color-white);
     color: var(--color-secondary);
 }
+
+.contact__button:disabled{
+    cursor: default;
+    background-color: var(--color-white-2);
+    color: var(--color-black-2);
+    border-color: var(--color-black-2);
+    opacity: .3;
+}
+
 
 /* Footer */
 
