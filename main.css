@@ -101,6 +101,21 @@ body {
     align-items: center;
 
     position: fixed;
+    z-index: 100;
+
+    transition: all .2s ease-in-out;
+}
+
+.navigation--detached {
+    background-color: var(--color-white);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    opacity: .95;
+}
+
+.navigation--detached .logo {
+    color: var(--color-primary);
 }
 
 .logo {
