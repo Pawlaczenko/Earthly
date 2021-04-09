@@ -331,6 +331,10 @@ body {
     overflow: hidden;
 }
 
+.tips__item * {
+    pointer-events: none;
+}
+
 .tips__item::before,
 .tips__item::after {
     content: "";
@@ -787,7 +791,7 @@ body {
     background-color: var(--color-white-2);
     color: var(--color-black-2);
     border-color: var(--color-black-2);
-    opacity: .3;
+    opacity: .4;
 }
 
 
@@ -804,4 +808,101 @@ body {
     font-size: 1.4rem;
     text-align: center;
     margin: auto;
+}
+
+/* Popup */
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    background-color: var(--color-white-2);
+    max-width: 74rem;
+    padding-bottom: 10rem;
+    background-image: url(./assets/icons/tip--3.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: bottom right;
+    z-index: 150;
+}
+
+.overlay {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--color-black);
+    opacity: .7;
+    width: 100vw;
+    height: 100vh;
+    z-index: 140;
+
+    display: none;
+}
+
+.popup__bar {
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: flex-end;
+}
+.popup__button {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+.popup__button:hover {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+}
+
+.popup__content {
+    padding: 2.5rem 3rem;
+    z-index: 100;
+}
+
+.popup__h {
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    font-family: var(--font-header);
+    font-weight: 400;
+}
+
+.popup__paragraph {
+    font-size: 2.4rem;
+    width: 90%;
+    opacity: .8;
+}
+
+.popup__list {
+    list-style-type: none;
+    margin-top: 1.5rem;
+}
+
+.popup__item {
+    font-size: 2.1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: .3rem;
+}
+
+.popup__item::before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: .8rem solid transparent;
+    border-bottom: .8rem solid transparent;
+    border-left: .8rem solid var(--color-primary);
+
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
