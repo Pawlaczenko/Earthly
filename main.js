@@ -3,6 +3,9 @@ const messageElement = document.querySelector('.contact__textarea');
 const wordsCounter = document.querySelector('.contact__counter-words');
 const formButton = document.querySelector('.contact__button');
 const tipsContainer = document.querySelector('.tips__container');
+const popup = document.querySelector('.popup');
+const overlay = document.querySelector('.overlay');
+const closeButton = document.querySelector('.popup__button');
 
 const detachedNavClass = "navigation--detached";
 const tips = {
@@ -24,7 +27,7 @@ const stickNavigation = (e) => {
 }
 
 const disableButton = (words) => {
-    formButton.disabled = (words > 200);
+    formButton.disabled = (words > 500);
 }
 
 const countWords = (e) => {
@@ -33,9 +36,9 @@ const countWords = (e) => {
 
     let color = 'black';
 
-    if (words > 190 && words <= 200) {
+    if (words > 490 && words <= 500) {
         color = "orange";
-    } else if (words > 200) {
+    } else if (words > 500) {
         color = "red";
     } else {
         color = "black";
@@ -45,39 +48,25 @@ const countWords = (e) => {
 }
 
 const openModal = e => {
+    const title = e.querySelector('.tips__title').innerHTML;
+    const text = e.querySelector('.tips__text').innerHTML;
     const id = e.id;
 
-    let list = '';
-    tips[id].forEach(tip => {
-        list += `<li class="popup__item">${tip}</li>`
-    });
+    popup.classList.toggle("closed");
+    overlay.classList.toggle("closed");
 
-    const title = e.querySelector('.tips__title').innerText;
-    const text = e.querySelector('.tips__text').innerText;
+    let tipsList = "";
+    tips[id].map(e => tipsList += `<li class="popup__item">${e}</li>`);
 
-    const element = `
-        <div class="popup__bar">
-            <button class="popup__button">X</button>
-        </div>
-        <div class="popup__content">
-            <h2 class="popup__h">${title}</h2>
-            <p class="popup__paragraph">${text}</p>
-            <ul class="popup__list">
-                ${list}
-            </ul>
-        </div>
-    `;
-    let popup = document.createElement('div');
-    popup.innerHTML = element;
-    popup.classList.add('popup');
+    popup.querySelector('.popup__h').innerHTML = title;
+    popup.querySelector('.popup__paragraph').innerHTML = text;
+    popup.querySelector('.popup__list').innerHTML = tipsList;
     popup.style.backgroundImage = `url(./assets/icons/${id}.svg)`;
-    document.querySelector('body').appendChild(popup);
-    document.querySelector('.overlay').style.display = "block";
 }
 
-closeModal = () => {
-    document.querySelector('.overlay').style.display = "none";
-    document.querySelector('body').removeChild(document.querySelector('.popup'));
+const closeModal = () => {
+    popup.classList.toggle("closed");
+    overlay.classList.toggle("closed");
 }
 
 window.addEventListener('scroll', stickNavigation);
@@ -85,6 +74,6 @@ messageElement.addEventListener('input', countWords);
 tipsContainer.addEventListener('click', e => {
     if (e.target.id) openModal(e.target);
 });
-document.addEventListener('click', e => {
-    if (e.target.classList.contains('popup__button')) closeModal();
-});
+
+closeButton.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
