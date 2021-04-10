@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="209.015" height="76.015" viewBox="0 0 209.015 76.015">
   <g id="DOTS" transform="translate(-863.993 -340.993)">
-    <line id="Line_2" data-name="Line 2" x2="206" y2="1" transform="translate(865.5 342.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_6" data-name="Line 6" x2="206" y2="1" transform="translate(865.5 369.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_9" data-name="Line 9" x2="206" y2="1" transform="translate(865.5 396.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_3" data-name="Line 3" x2="206" y2="1" transform="translate(865.5 351.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_5" data-name="Line 5" x2="206" y2="1" transform="translate(865.5 378.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_8" data-name="Line 8" x2="206" y2="1" transform="translate(865.5 405.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_4" data-name="Line 4" x2="206" y2="1" transform="translate(865.5 360.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_7" data-name="Line 7" x2="206" y2="1" transform="translate(865.5 387.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
-    <line id="Line_10" data-name="Line 10" x2="206" y2="1" transform="translate(865.5 414.5)" fill="none" stroke="rgba(72,165,58,0.15)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_2" data-name="Line 2" x2="206" y2="1" transform="translate(865.5 342.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_6" data-name="Line 6" x2="206" y2="1" transform="translate(865.5 369.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_9" data-name="Line 9" x2="206" y2="1" transform="translate(865.5 396.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_3" data-name="Line 3" x2="206" y2="1" transform="translate(865.5 351.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_5" data-name="Line 5" x2="206" y2="1" transform="translate(865.5 378.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_8" data-name="Line 8" x2="206" y2="1" transform="translate(865.5 405.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_4" data-name="Line 4" x2="206" y2="1" transform="translate(865.5 360.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_7" data-name="Line 7" x2="206" y2="1" transform="translate(865.5 387.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
+    <line id="Line_10" data-name="Line 10" x2="206" y2="1" transform="translate(865.5 414.5)" fill="none" stroke="rgba(72,165,58,0.35)" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 8"/>
   </g>
 </svg>
