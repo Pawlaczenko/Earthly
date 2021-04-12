@@ -930,6 +930,13 @@ body {
     margin: auto;
 }
 
+.footer a,
+ .footer a:visited,
+ .footer a:active{
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
 /* Popup */
 
 .popup {
