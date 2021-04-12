@@ -1079,12 +1079,17 @@ body {
 }
 
 .burger__label {
-    position: relative;
+    padding: 5px;
 }
 
-.burger__label,
-.burger__label::after,
-.burger__label::before{
+.burger__bar {
+    position: relative;
+    margin: 8px 0;
+}
+
+.burger__bar,
+.burger__bar::after,
+.burger__bar::before{
     display: none;
     width: 4rem;
     height: 3px;
@@ -1093,30 +1098,31 @@ body {
     transition: var(--burger-transition);
 }
 
-.burger__label::after,
-.burger__label::before{
+.burger__bar::after,
+.burger__bar::before{
     content: "";
     position: absolute;
     left: 0;
+    height: 3px;
 }
 
-.burger__label::after {
+.burger__bar::after {
     top: -8px;
 }
 
-.burger__label::before {
+.burger__bar::before {
     bottom: -8px;
 }
 
-.burger__guts:checked + .burger__label {
+.burger__guts:checked + .burger__label > .burger__bar {
     background-color: transparent;
 }
 
-.burger__guts:checked + .burger__label::after {
+.burger__guts:checked + .burger__label > .burger__bar::after {
     transform: translateY(8px) rotate(45deg);
 }
 
-.burger__guts:checked + .burger__label::before {
+.burger__guts:checked + .burger__label > .burger__bar::before {
     transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -1183,9 +1189,9 @@ body {
         margin-bottom: 2rem;
     }
 
-    .burger__label,
-    .burger__label::after,
-    .burger__label::before{
+    .burger__bar,
+    .burger__bar::after,
+    .burger__bar::before{
         display: block;
     }
     
