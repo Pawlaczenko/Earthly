@@ -78,6 +78,13 @@ const hideTheLoader = () => {
     document.querySelector('.loader').classList.add('closed');
 }
 
+const handleHashChange = () => {
+    //Make place for the navigation at the top
+    window.scrollTo(window.scrollX, window.scrollY - navigation.offsetHeight);
+
+    //Hide the navigation list when clicked
+    document.getElementById('burger').checked = false;
+}
 //Listeners
 
 window.addEventListener('scroll', stickNavigation);
@@ -89,8 +96,6 @@ tipsContainer.addEventListener('click', e => {
 closeButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
-window.addEventListener("hashchange", function () {
-    window.scrollTo(window.scrollX, window.scrollY - navigation.offsetHeight);
-});
+window.addEventListener("hashchange", handleHashChange);
 
 window.addEventListener("load", hideTheLoader);
