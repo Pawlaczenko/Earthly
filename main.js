@@ -1,14 +1,14 @@
 //Variables and Constants
 
 const navElement = document.querySelector('.navigation');
+const navigationList = document.querySelector('.navigation__list');
 const messageElement = document.querySelector('.contact__textarea');
-const wordsCounter = document.querySelector('.contact__counter-words');
+const lettersCounter = document.querySelector('.contact__counter-words');
 const formButton = document.querySelector('.contact__button');
 const tipsContainer = document.querySelector('.tips__container');
 const popup = document.querySelector('.popup');
 const overlay = document.querySelector('.overlay');
 const closeButton = document.querySelector('.popup__button');
-const navigation = document.querySelector('.navigation');
 
 const detachedNavClass = "navigation--detached";
 const tips = {
@@ -20,9 +20,10 @@ const tips = {
     'tip--6': ["Buy local. The less distance your food has travelled the smaller the carbon footprint.", "Plant a tree", "Spread the word and share what you know to all your friends and family."]
 }
 
-//Functions
+//FUNCTIONS//
 
-const stickNavigation = (e) => {
+//Handling the sticky vagivation
+const stickNavigation = () => {
     let yPos = window.pageYOffset;
     if (yPos > 0 && !navElement.classList.contains(detachedNavClass)) {
         navElement.classList.add(detachedNavClass);
@@ -31,27 +32,39 @@ const stickNavigation = (e) => {
     }
 }
 
-const disableButton = (words) => {
-    formButton.disabled = (words > 500);
+const handleHashChange = () => {
+    //Make place for the navigation at the top
+    window.scrollTo(window.scrollX, window.scrollY - navElement.offsetHeight);
 }
 
-const countWords = (e) => {
-    let words = e.target.value.length;
-    wordsCounter.innerHTML = words;
+const handleTheNavigation = e => {
+    //Hide the navigation list when the link is clicked
+    if (e.target.classList.contains('navigation__link')) document.getElementById('burger').checked = false;
+}
+
+//Handling the letter counter in messege input
+const disableButton = (letters) => {
+    formButton.disabled = (letters > 500);
+}
+
+const countletters = (e) => {
+    let letters = e.target.value.length;
+    lettersCounter.innerHTML = letters;
 
     let color = 'black';
 
-    if (words > 490 && words <= 500) {
+    if (letters > 490 && letters <= 500) {
         color = "orange";
-    } else if (words > 500) {
+    } else if (letters > 500) {
         color = "red";
     } else {
         color = "black";
     }
-    disableButton(words);
-    wordsCounter.parentElement.style.color = color;
+    disableButton(letters);
+    lettersCounter.parentElement.style.color = color;
 }
 
+//Handling the modal mechanics
 const openModal = e => {
     const title = e.querySelector('.tips__title').innerHTML;
     const text = e.querySelector('.tips__text').innerHTML;
@@ -74,21 +87,17 @@ const closeModal = () => {
     overlay.classList.toggle("closed");
 }
 
+
+//Handling the loader
 const hideTheLoader = () => {
     document.querySelector('.loader').classList.add('closed');
 }
 
-const handleHashChange = () => {
-    //Make place for the navigation at the top
-    window.scrollTo(window.scrollX, window.scrollY - navigation.offsetHeight);
-
-    //Hide the navigation list when clicked
-    document.getElementById('burger').checked = false;
-}
-//Listeners
+// LISTENERS //
 
 window.addEventListener('scroll', stickNavigation);
-messageElement.addEventListener('input', countWords);
+navigationList.addEventListener('click', handleTheNavigation);
+messageElement.addEventListener('input', countletters);
 tipsContainer.addEventListener('click', e => {
     if (e.target.id) openModal(e.target);
 });
@@ -97,5 +106,4 @@ closeButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
 window.addEventListener("hashchange", handleHashChange);
-
 window.addEventListener("load", hideTheLoader);
