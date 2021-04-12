@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Earthly.com</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -13,6 +14,9 @@
 </head>
 
 <body>
+    <div class="loader">
+        <div class="loader__spinner"></div>
+    </div>
     <nav class="navigation gap">
         <a href="#header" class="logo">Earthly</a>
         <ul class="navigation__list">
@@ -227,7 +231,7 @@
                         <input class="contact__custom-radio" value="management" type="radio" name="msg_matter">
                         <span class="contact__checkmark"></span>
                     </label>
-                    <label class="contact__radio-container">Different matter
+                    <label class="contact__radio-container">None
                         <input class="contact__custom-radio" value="other" type="radio" name="msg_matter" checked>
                         <span class="contact__checkmark"></span>
                     </label>

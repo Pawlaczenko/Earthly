@@ -1,3 +1,5 @@
+//Variables and Constants
+
 const navElement = document.querySelector('.navigation');
 const messageElement = document.querySelector('.contact__textarea');
 const wordsCounter = document.querySelector('.contact__counter-words');
@@ -6,6 +8,7 @@ const tipsContainer = document.querySelector('.tips__container');
 const popup = document.querySelector('.popup');
 const overlay = document.querySelector('.overlay');
 const closeButton = document.querySelector('.popup__button');
+const navigation = document.querySelector('.navigation');
 
 const detachedNavClass = "navigation--detached";
 const tips = {
@@ -16,6 +19,8 @@ const tips = {
     'tip--5': ["Switch to renewable energy", "Install solar panels and generate your own energy"],
     'tip--6': ["Buy local. The less distance your food has travelled the smaller the carbon footprint.", "Plant a tree", "Spread the word and share what you know to all your friends and family."]
 }
+
+//Functions
 
 const stickNavigation = (e) => {
     let yPos = window.pageYOffset;
@@ -69,6 +74,12 @@ const closeModal = () => {
     overlay.classList.toggle("closed");
 }
 
+const hideTheLoader = () => {
+    document.querySelector('.loader').classList.add('closed');
+}
+
+//Listeners
+
 window.addEventListener('scroll', stickNavigation);
 messageElement.addEventListener('input', countWords);
 tipsContainer.addEventListener('click', e => {
@@ -77,3 +88,9 @@ tipsContainer.addEventListener('click', e => {
 
 closeButton.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - navigation.offsetHeight);
+});
+
+window.addEventListener("load", hideTheLoader);

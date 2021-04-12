@@ -26,6 +26,17 @@
 
 }
 
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
 :root {
     /* Fonts */
     --font-header: 'Lato', sans-serif; /* 300 400 700 900 */
@@ -46,6 +57,47 @@
     --vertical-gap: 3rem;
 
     --list-border: 2px solid var(--color-black-2);
+}
+
+
+/* Loader */
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .2s ease-in-out;
+}
+
+.loader__spinner {
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid var(--color-primary);
+
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: spin 1.5s cubic-bezier(.2,.64,1,.73) infinite both;
+    overflow: hidden;
+}
+
+.loader__spinner::after {
+    content: "";
+    display: block;
+    background-color: var(--color-primary);
+    width: 50%;
+    height: 100%;
 }
 
 .gap {
@@ -210,8 +262,6 @@ body {
 }
 
 .header__container {
-    /* background-color: var(--color-primary); */
-    /* background: rgb(72,165,58); */
     background: url(./assets/dots-white.svg) no-repeat bottom 15px right 15px,
                 linear-gradient(138deg, rgba(72,165,58,1) 0%, rgba(58,165,104,1) 100%);
     background-size: 25%, 100%;
@@ -345,7 +395,7 @@ body {
 }
 
 .tips__container {
-    width: 117rem;
+    max-width: 117rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(36rem,1fr));
     gap: 3.2rem;
@@ -486,11 +536,13 @@ body {
 }
 
 .branches__item {
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .branches__content {
+    width: 50%;
     padding-top: 8rem;
     padding-bottom: 8rem;
     padding-left: 8rem;
@@ -516,6 +568,7 @@ body {
 }
 
 .branches__image {
+    width: 50%;
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -567,6 +620,7 @@ body {
 .contact__container{
     display: grid;
     grid-template-columns: 35% 65%;
+    grid-template-areas: "leaflet form";
 
     max-width: 120rem;
     margin: 4rem auto;
@@ -576,6 +630,7 @@ body {
 }
 
 .contact__leaflet {
+    grid-area: leaflet;
     background: url(./assets/back-contact.svg) no-repeat bottom right;
     background-size: 35%;
     background-color: var(--color-black-2);
@@ -662,6 +717,7 @@ body {
 
 .contact__form {
     padding: 3rem 3rem;
+    grid-area: form;
 }
 
 .contact__user {
@@ -1008,17 +1064,68 @@ body {
     background-color: var(--color-white);
 }
 
-/* .popup__item::before{
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: .8rem solid transparent;
-    border-bottom: .8rem solid transparent;
-    border-left: .8rem solid var(--color-primary);
+/* Media Queries */
 
-    position: absolute;
-    left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
-} */
+@media only screen and (max-width: 600px) {
+    :root {
+        --horizontal-gap: 2rem;
+    }
+
+    .contact__container {
+        max-width: unset;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .contact__user {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__group {
+        text-align: center;
+    }
+
+    .contact__radios {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact__radio-container {
+        margin: 1.5rem 0;
+    }
+
+    .science {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 20rem;
+    }
+
+    .science__image {
+        min-height: unset;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+      font-size: 50% !important;
+    }
+}
+
+  @media only screen and (max-width: 1100px) {
+    .branches__item {
+        flex-direction: column;
+    }
+    .branches__item > div {
+        width: 100%;
+    }
+
+    .branches__item:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+
+    .contact__container {
+        grid-template-columns: 100%;
+        grid-template-areas: "form"
+                    "leaflet";
+    }
+  }
