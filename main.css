@@ -57,6 +57,7 @@
     --vertical-gap: 3rem;
 
     --list-border: 2px solid var(--color-black-2);
+    --burger-transition: all .5s ease-in-out;
 }
 
 
@@ -191,7 +192,6 @@ body {
     box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    opacity: .95;
 }
 
 .navigation--detached .logo {
@@ -1064,6 +1064,68 @@ body {
     background-color: var(--color-white);
 }
 
+/* Burger */
+.burger__guts {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    z-index: 500;
+}
+
+.burger__label {
+    position: relative;
+}
+
+.burger__label,
+.burger__label::after,
+.burger__label::before{
+    display: block;
+    width: 4rem;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 15px;
+    transition: var(--burger-transition);
+}
+
+.burger__label::after,
+.burger__label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burger__label::after {
+    top: -8px;
+}
+
+.burger__label::before {
+    bottom: -8px;
+}
+
+.burger__guts:checked + .burger__label {
+    background-color: transparent;
+}
+
+.burger__guts:checked + .burger__label::after,
+.burger__guts:checked + .burger__label::before {
+
+}
+
+.burger__guts:checked + .burger__label::after {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger__guts:checked + .burger__label::before {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.burger__guts:checked ~ .navigation__list {
+    right: 0;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, .2);
+}
+
 /* Media Queries */
 
 @media only screen and (max-width: 600px) {
@@ -1078,6 +1140,37 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+    
+    .navigation__list {
+        position: fixed;
+        right: -65vw;
+        top: 0;
+        width: 65vw;
+        height: 100vh;
+        z-index: -1;
+
+        flex-direction: column;
+        justify-content: center;
+
+        background: url(./assets/dots.svg) no-repeat bottom 10px right 8%;
+        background-color: var(--color-white);
+        transition: var(--burger-transition);
+    }
+
+    .navigation__item {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .science {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 20rem;
+    }
+
+    .science__image {
+        min-height: unset;
+    }
+
     .contact__user {
         grid-template-columns: 1fr;
     }
@@ -1093,15 +1186,6 @@ body {
 
     .contact__radio-container {
         margin: 1.5rem 0;
-    }
-
-    .science {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 20rem;
-    }
-
-    .science__image {
-        min-height: unset;
     }
 }
 
