@@ -105,9 +105,14 @@
     padding: var(--vertical-gap) var(--horizontal-gap);
 }
 
+.divider__container {
+    width: 40%;
+    margin: auto;
+}
+
 .divider {
     display: block;
-    margin: auto;
+    width: 100%;
 }
 
 /* ?Headings */
@@ -136,7 +141,8 @@
 
 .paragraph--main {
     font-size: 1.6rem;
-    opacity: .5;
+    color: #858585;
+    /* opacity: .5; */
     font-weight: 400;
 }
 
@@ -529,6 +535,7 @@ body {
     width: 60%;
     margin: 2rem auto;
     text-align: center;
+    padding: 0 var(--horizontal-gap);
 }
 
 .branches__container{
@@ -888,7 +895,6 @@ body {
     border-radius: 18px;
     margin-top: 3rem;
     margin-right: 3rem;
-    float: right;
     border: 3px solid var(--color-secondary);
     transition: all .2s ease-in-out;
 }
@@ -1081,7 +1087,7 @@ body {
 .burger__label,
 .burger__label::after,
 .burger__label::before{
-    display: block;
+    display: none;
     width: 4rem;
     height: 3px;
     background-color: var(--color-primary);
@@ -1137,6 +1143,28 @@ body {
         max-width: unset;
         width: 100%;
     }
+
+    .branches__content {
+        padding: 4rem;
+    }
+
+    .branches__title {
+        font-size: 4.5rem;
+    }
+
+    .contact__button{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .popup,
+    .popup__bar {
+        border-radius: 0;
+    }
+
+    .popup__list {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -1160,6 +1188,12 @@ body {
     .navigation__item {
         font-size: 2rem;
         margin-bottom: 2rem;
+    }
+
+    .burger__label,
+    .burger__label::after,
+    .burger__label::before{
+        display: block;
     }
     
     .science {
@@ -1193,9 +1227,50 @@ body {
     html {
       font-size: 50% !important;
     }
+
+    .heading--1 {
+        font-size: 8rem;
+    }
+
+    .heading--2 {
+        font-size: 4.5rem;
+    }
+
+    .header__paragraph,
+    .science__paragraph,
+    .tips__paragraph,
+    .branches__paragraph,
+    .branches__item-paragraph{
+        width: 100%;
+    }
 }
 
   @media only screen and (max-width: 1100px) {
+
+    .navigation {
+        background-color: var(--color-white);
+    }
+
+    .header {
+        background: linear-gradient(rgba(72, 165, 58, 0.12),rgba(72, 165, 58, 0.12)),
+                    url(./assets/back-1-bottom.jpg) no-repeat center fixed;
+        background-size: 100%, cover;
+        padding: 0;
+    }
+
+    .header__container {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
     .branches__item {
         flex-direction: column;
     }
